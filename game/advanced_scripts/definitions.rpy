@@ -46,7 +46,6 @@ init python:
 #For easier reference, there are comments next to it so you can go DJ on the mod :)
 define audio.t1 = "<loop 22.073>bgm/1.ogg"  #Main theme (title)
 
-
 define audio.t2 = "<loop 4.499>bgm/2.ogg"   #Sayori theme
 define audio.t2g = "bgm/2g.ogg"
 define audio.t2g2 = "<from 4.499 loop 4.499>bgm/2.ogg"
@@ -58,6 +57,10 @@ define audio.t3g3 = "<loop 4.618>bgm/3g2.ogg"
 define audio.t3m = "<loop 4.618>bgm/3.ogg"
 define audio.t4 = "<loop 19.451>bgm/4.ogg"  #Poem minigame
 define audio.t4g = "<loop 1.000>bgm/4g.ogg"
+
+define audio.tcityscape1 = "mus/cityscape1.ogg"
+define audio.tfight = "mus/ricochet.ogg"
+define audio.tcar = "<loop 11.49>mus/carstart.ogg"
 
 define audio.t5 = "<loop 4.444>bgm/5.ogg"   #Sharing poems...... 'Okay Everyone~!'
 #Hey Mod team, our themes aren't defined here in the original script.
@@ -103,6 +106,23 @@ define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 
+transform alpha_dissolve:
+    alpha 0.0
+    linear 0.5 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0
+    # This is to fade the bar in and out, and is only required once in your script
+
+screen countdown:
+    timer 1 repeat True action If(time > 0, true=SetVariable('time', time - 1), false=[Hide('countdown'), Jump(timer_jump)])
+    if time <= 3:
+        text  "{size=+80}[time]{/size}" xpos .48 ypos .1 color "#FF0000" text_align 0 at alpha_dissolve
+    else:
+        text "{size=+80}[time]{/size}" xpos .48 ypos .1 text_align 0 at alpha_dissolve
+init:
+    $ timer_range = 0
+    $ timer_jump = 0
+
 # Backgrounds
 image black = "#000000"
 image dark = "#000000e4"
@@ -117,6 +137,7 @@ image bg class_day = "bg/class.png"
 image bg corridor = "bg/corridor.png"
 image bg club_day = "bg/club.png"
 image bg club_night = "bg/club_night.png"
+image bg road = "bg/Yagamirai/road.png"
 image bg club_day2:
     choice:
         "bg club_day"

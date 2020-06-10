@@ -1,12 +1,43 @@
 
 define q = Character("???")
 define j = Character("Jett")
+define mdd = Character("Mod Dev.")
 
 label script_intro_start:
     stop music fadeout 2.0
+    play music tcityscape1
+    m "Hey you brought me ba-"
+    pause 1.0
+    call updateconsole("delete monika.chr","Deleted Monika.")
+    pause 2.0
+    mdd "Alright. That's taken care of for this demo..."
+    call hideconsole()
     
+    mdd "Hey, it's Iridescence, or the Mod Dev. Whatever you want to call me."
+    mdd "Damn, that chat box doesn't fit Iridescence. Oh well."
+    
+    if player == "Zero":
+        mdd "Oh. I see. Hello, AfroZer0. I've been waiting for you... I have one question... do you actually have an afro?"
+        menu:
+            "Yes":
+                "That's very cool. I enjoy that. Carry on."
+                pass
+            "No":
+                "My disappointment is immeasurable, my day is ruined."
+                pass
+    
+    mdd "This is a VERY short demo of DDLC 365. It's basically just a mechanics test of driving missions, combat, and the affection system."
+    mdd "That said, it's pretty cool, and I hope you enjoy the beginnings of the world of DDLC 365."
+    mdd "In the full game, your choices will matter, and lead you through this world. Should you fail to keep balance, the world will come crashing down."
+    mdd "And yes, 365 means 365 days of content. I might be insane."
+    mdd "Oh well..."
+    
+    $ line = glitchtext(120)
+    mdd "[line]"
+    
+    scene black with Dissolve(2)
     show text "Alley - 2:00PM, Monday 8/21/2017" with Dissolve(2)
-    pause 3.0
+    pause 1.0
     scene black with Dissolve(2)
     
     "..."
@@ -82,8 +113,11 @@ label intro_question_end:
     mc "Thank you, but I do not need luck."
     q "Whatever you say, kid."
     "The man smiles proudly at me, following as I get into the car to ride shotgun with Jett."
+    stop music fadeout 1.0
+    play music tcar fadein 1.0
     "He bids us a farewell wave and turns as Jett begins to speed out of the alley and onto city streets."
     
     # Here we should jump into the Day Zero script
+    call day0_main from _call_day0_main
     
     return
