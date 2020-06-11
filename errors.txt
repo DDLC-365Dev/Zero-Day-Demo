@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/dev/day0/day0.rpy", line 170: expected menuitem
-    $ time = 3
-    ^
+File "game/dev/day0/day0.rpy", line 390: end of line expected.
+    show sayori 1b at t11 zorder 2 leftin
+                                   ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

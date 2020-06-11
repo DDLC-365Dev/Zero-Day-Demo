@@ -61,6 +61,7 @@ define audio.t4g = "<loop 1.000>bgm/4g.ogg"
 define audio.tcityscape1 = "mus/cityscape1.ogg"
 define audio.tfight = "mus/ricochet.ogg"
 define audio.tcar = "<loop 11.49>mus/carstart.ogg"
+define audio.tcar2 = "mus/car2.ogg"
 
 define audio.t5 = "<loop 4.444>bgm/5.ogg"   #Sharing poems...... 'Okay Everyone~!'
 #Hey Mod team, our themes aren't defined here in the original script.
@@ -156,7 +157,7 @@ image bg bedroom = "bg/bedroom.png"
 image bg sayori_bedroom = "bg/sayori_bedroom.png"
 image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"
-
+image bg citystreet = "bg/Yagamirai/citystreet.jpg"
 image bg notebook = "bg/notebook.png"
 image bg notebook-glitch = "bg/notebook-glitch.png"
 
